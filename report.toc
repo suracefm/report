@@ -1,0 +1,16 @@
+\contentsline {section}{\numberline {1}Introduction}{3}
+\contentsline {section}{\numberline {2}Dynamical theory of diffraction}{3}
+\contentsline {subsection}{\numberline {2.1}One atomic layer: reflection and transmission}{3}
+\contentsline {subsection}{\numberline {2.2}Diffraction from a set of atomic planes}{4}
+\contentsline {subsection}{\numberline {2.3}General case: substrate}{6}
+\contentsline {subsection}{\numberline {2.4}General case: epitaxial layer}{7}
+\contentsline {subsection}{\numberline {2.5}Recursion formulae}{7}
+\contentsline {section}{\numberline {3}Implementation}{8}
+\contentsline {subsection}{\numberline {3.1}Structure}{8}
+\contentsline {subsection}{\numberline {3.2}Geometrical parameters}{8}
+\contentsline {subsection}{\numberline {3.3}Strained crystals}{9}
+\contentsline {section}{\numberline {4}Results}{9}
+\contentsline {subsection}{\numberline {4.1}Rocking curves of crystalline multilayers}{9}
+\contentsline {subsection}{\numberline {4.2}Diffraction profiles of strained crystals}{9}
+\contentsline {subsection}{\numberline {4.3}Comparison with experimental data}{9}
+\contentsline {section}{References}{10}
