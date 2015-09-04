@@ -1,6 +1,32 @@
 \documentclass[12pt,oneside,notitlepage,abstracton,a4paper]{scrartcl}
-\usepackage{epsfig,scrpage2,graphicx, amsmath, caption, hyperref, natbib}
+\usepackage{epsfig,scrpage2,graphicx, amsmath, caption, hyperref, natbib, wrapfig, pstricks, epsfig}
 \usepackage[font=scriptsize]{subcaption}
+
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=Python,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+
 
 
 \setcounter{secnumdepth}{3}
@@ -30,6 +56,8 @@
 
 \noindent
 
+Numerous methods for the nondestructive characterization of thin epitaxial films,
+multilayers and superlattices by x-ray diffraction (XRD) have been developed since the advent of synchrotron radiation sources. In this report, dynamical theory of XRD is used to describe the diffraction profiles of crystalline structures in Bragg case reflection. A software (\textit{dynXRD}) was developed in order to simulate the rocking curves of various types of multilayers and superlattices, including deformed crystals. Results were compared with experimental data, leading to the determination of the strain profile of the sample considered.
 \end{abstract}
 
 % If you want, you can also put here a picture %%%
@@ -55,8 +83,9 @@ As the incident wave propagates down into a perfect crystal its amplitude dimini
 
 In the method first developed by C. G. Darwin in 1914, the crystal is treated as an infinite stack of atomic planes, each of which gives rise to a weak reflected wave which may subsequently be re-scattered into the direction of the incident beam.
 
+%Bragg
 
-\subsection{One atomic layer: reflection and transmission}\label{onelayer}
+\subsection{One layer: reflection and transmission}\label{onelayer}
 
 \begin{figure}[h]
 \begin{center}
@@ -66,7 +95,7 @@ In the method first developed by C. G. Darwin in 1914, the crystal is treated as
 \end{center}
 \end{figure}
 
-We consider first the reflection from a single layer of unit cells in the Bragg case. Let the incident beam be $\sigma$-polarized (i.e. the electric field is parallel to the layer) and have a wavelength $\lambda$. We can calculate the amplitude of the reflected and transmitted beams by considering the radiation scattered from an element of area $d\epsilon d\eta$ and integrating over the layer. We obtain the following expression for the instantaneous value of the electric field at point $P$ (figure \ref{pic1})
+We consider first the reflection from a single layer of the crystal near the Bragg case. Let the incident beam be $\sigma$-polarized (i.e. the electric field is parallel to the layer) and have a wavelength $\lambda$. We can calculate the amplitude of the reflected and transmitted beams by considering the radiation scattered from an element of area $d\epsilon d\eta$ and integrating over the layer. We obtain the following expression for the instantaneous value of the electric field at point $P$ (figure \ref{pic1})
 
 \begin{equation}
  E_P=-ig_\mathbf{H}E_Oe^{(2\pi i /\lambda)[(R+r)-ct]}.
@@ -89,7 +118,7 @@ where $r_e=\frac{e^2}{mc^2}=2.818 \cdot 10^{-5} \AA{}$ is the classical electron
 \end{figure}
 
 
-Similarly, the electric field in the beam which has passed through a layer of unit cells is expressed by
+Similarly, the electric field in the beam which has passed through a layer of unit cells (figure \ref{pic2}) is expressed by
 \begin{equation}\label{Et}
  E_{P'}=(1-ig_0)E_Oe^{(2\pi i /\lambda)[(R+r)-ct]}
 \end{equation}
@@ -101,18 +130,20 @@ where
 
 Since $V$ is of order $d^3$, $g_\mathbf{H}$ and $g_0$ are of order $r_0/d \simeq 10^{-5} \ll 1$.
 
-\subsection{Diffraction from a set of atomic planes}
-We now turn our attention to the problem of how to calculate the scattering from an infinite stack of atomic planes, where each one reflects and transmits the incident wave according to the equations given in section \ref{onelayer}. The planes are labelled by the index $r$, with the surface plane defined by $r=0$. The objective is to calculate the amplitude reflectivity, which is the ratio of the total reflected wavefield $S_0$ to that of the incident field $T_0$.
-
-Both outside and within the crystal there are two wavefields: the $T$ field propagating in the direction of the incident beam , and the $S$ field in the direction of the reflected beam (figure \ref{pic3}).
-
-\begin{figure}[h]
+\newpage
+\subsection{Diffraction from a set of planes}
+\begin{wrapfigure}{r}{0.4\textwidth}
+\vspace{-40pt}
 \begin{center}
 \includegraphics[width=7cm]{pics/picture3.png}
 \caption{}
 \label{pic3}
 \end{center}
-\end{figure}
+\end{wrapfigure}We now turn our attention to the problem of how to calculate the scattering from an infinite stack of atomic planes, where each one reflects and transmits the incident wave according to the equations given in section \ref{onelayer}. The planes are labelled by the index $r$, with the surface plane defined by $r=0$. The objective is to calculate the amplitude reflectivity, which is the ratio of the total reflected wavefield $S_0$ to that of the incident field $T_0$.
+
+Both outside and within the crystal there are two wavefields: the $T$ field propagating in the direction of the incident beam , and the $S$ field in the direction of the reflected beam (figure \ref{pic3}).
+
+
 
 
 The derivation of Bragg's law relies on the fact that the reflected wave from layer $r+1$ is in phase with the one from layer $r$ if the pathlength differs by an integer number of wavelengths. 
@@ -218,13 +249,24 @@ The equations for $X_R$ and $X_T$ reduce to
  X_T=\frac{(\eta^2-1)^{1/2}}{Q}.
 \end{equation}
 
+The absolute squares of $X_R$ and $X_T$ are the reflectivity (figure \ref{dyn}) and transmittivity of the layer.
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=12 cm]{pics/dynamical.eps}
+\caption{Darwin curve of a MgO $002$ reflection. If X-ray absorption were absent, the top of the curve of the infinitely thick crystal would be flat (Darwin plateau).}
+\label{dyn}
+\end{center}
+\end{figure}
 
 
-
-
+\newpage
 \subsection{Recursion formulae}
+
+
+
 %picture, more words
-When an epitaxial layer with reflected and transmitted amplitude ratios $X_R^1$ and $X_T^1$ is added to a substrate with ratios $X_R^0$, $X_T^0$, the new amplitude ratios $X_t$, $W$ for the crystal can be derived in a recursive way as follows
+When an epitaxial layer with reflected and transmitted amplitude ratios $X_R^1$ and $X_T^1$ is added to a substrate with ratios $X_R^0$, $X_T^0$, the new amplitude ratios $X_t$, $W$ for the crystal can be derived in a recursive way. In combining the crystal parts in figure \ref{rec}, the incident beam of the lower part is replaced by the transmitted beam of the upper part. Owing to multiple reflections the amplitude ratios will vary but can be expressed in the original values $X_R^0$, $X_T^0$, $X_R^1$ and $X_T^1$, so that
 \begin{equation}
  X_t=X_T^1 Y+X_R^1
 \end{equation}
@@ -246,7 +288,34 @@ After substitution, we obtain the reflected and transmitted amplitude ratios for
  W=\frac{X_T^0 X_T^1}{1-X_R^0 X_R^1}.
 \end{equation}
 
-
+\begin{figure}[h]
+\begin{center}
+\scalebox{1}
+{
+\begin{pspicture}(0,0)(4,3)
+\psframe[linewidth=0.04,dimen=outer](0,1)(4,1.2)
+\psline[linewidth=0.04cm,arrowsize=0.06cm 2.0,arrowlength=1.4,arrowinset=0.4]{->}(1.3,2.9)(1.9,2.3)
+\psline[linewidth=0.04cm,arrowsize=0.06cm 2.0,arrowlength=1.4,arrowinset=0.4]{->}(1.3,1.9)(1.9,1.3)
+\psframe[linewidth=0.04,dimen=outer](0,2)(4,2.2)
+\psline[linewidth=0.04cm,arrowsize=0.06cm 2.0,arrowlength=1.4,arrowinset=0.4]{->}(2.1,2.3)(2.7,2.9)
+\psline[linewidth=0.04cm,arrowsize=0.06cm 2.0,arrowlength=1.4,arrowinset=0.4]{->}(2.1,1.3)(2.7,1.9)
+\psline[linewidth=0.04cm,arrowsize=0.06cm 2.0,arrowlength=1.4,arrowinset=0.4]{->}(1.6,0.9)(2.2,0.3)
+%\usefont{T1}{ptm}{m}{n}
+\rput(2.9,2.6){$X_t$}
+%\usefont{T1}{ptm}{m}{n}
+\rput(1.1,1.6){$Z$}
+%\usefont{T1}{ptm}{m}{n}
+\rput(2.9,1.6){$Y$}
+%\usefont{T1}{ptm}{m}{n}
+\rput(2.4,0.6){$W$}
+\rput(4.9,2.1){$X_R^1$, $X_T^1$}
+\rput(4.9,1.1){$X_R^0$, $X_T^0$}
+\end{pspicture} 
+}
+\caption{}
+\label{rec}
+\end{center}
+\end{figure}
 
 
 
@@ -294,6 +363,28 @@ If $\mathbf{b^*}$ and $\mathbf{v_\perp}$ are parallel then $\mathbf{p}$ is defin
 \end{equation}
 Specification of $\mathbf{v_\parallel}$ is no longer required since it can be calculated from $\psi$. Now $\mathbf{v_\parallel}$ is automatically perpendicular to $\mathbf{v_\perp}$ and no errors occur.
 
+
+\begin{figure}[h]
+\begin{center}
+\scalebox{1} % Change this value to rescale the drawing.
+{
+\begin{pspicture}(0,0)(4.5,2.6)
+\pspolygon[linewidth=0.04](0.0,0)(3.5,0)(4.5,2)(1,2)
+\psline[linewidth=0.04cm,arrowsize=0.06cm 2.0,arrowlength=1.4,arrowinset=0.4]{->}(2,1)(2,2.6)
+\psline[linewidth=0.04cm,arrowsize=0.06cm 2.0,arrowlength=1.4,arrowinset=0.4]{->}(2,1)(3.15,1.65)
+\psline[linewidth=0.04cm,arrowsize=0.06cm 2.0,arrowlength=1.4,arrowinset=0.4]{->}(2,1)(3.3,0.9)
+\psarc[linewidth=0.04](2.5, 1.1){0.24}{320}{75.0}
+\rput(1.7,1.5){$\mathbf{v_\perp}$}
+\rput(2.6,1.6){$\mathbf{p}$}
+\rput(2.8,0.6){$\mathbf{v_\parallel}$}
+\rput(3,1.2){$\psi$}
+\end{pspicture} 
+}
+\caption{}
+\label{geom1}
+\end{center}
+\end{figure}
+
 The vector $\mathbf{v_\perp}$ and $\mathbf{v_\parallel}$ specify the geometry of the reflection.
 If $\mathbf{v_\perp}$ and $\mathbf{H}$ are parallel - i.e. if the asymmetry factor $b$ is equal to $-1$ - the reflection is \textit{symmetric}. If this condition is not fulfilled the reflection is said to be \textit{asymmetric}.
 We call the geometry \textit{coplanar} where the incident wave vector $\mathbf{k_0}$, the reciprocal lattice vector $\mathbf{H}$, and the surface normal $\mathbf{n}$ lie in the same plane or equivalently when $\mathbf{v_\parallel}$, $\mathbf{v_\perp}$ and $\mathbf{H}$ are coplanar.
@@ -302,14 +393,35 @@ We call the geometry \textit{coplanar} where the incident wave vector $\mathbf{k
 %code?
 %something about M and R?
 
+
+\subsection{Reflectivity}
+Calculation of reflected and transmitted amplitudes of a layer is implemented via the methods \textit{Epitaxial\_Layer.calc\_parameters} and \textit{Epitaxial\_Layer.calc\_amplitudes} which apply equations \ref{eq:darwin} (for the substrate), \ref{XR} and \ref{XT} (for the epitaxial layers).
+
+After solving the dynamical diffraction problem for each layer, the reflection from the whole stack is calculated with the equations \ref{refl} and \ref{trans}:
+\begin{lstlisting}
+    def calc_reflectivity(self, theta, Energy, Polarization=1):
+        self.calc_theta_layer()
+        self.calc_g0_gH(Energy)
+        self.substrate.calc_amplitudes(theta, Energy)
+        X0=self.substrate.XR
+        for layer in self.Layers:
+            layer.calc_amplitudes(theta, Energy)
+            XR=layer.XR
+            XT=layer.XT
+            Xt=(XR-X0*(XR**2-XT**2))/(1-X0*XR)
+            X0=Xt
+        return X0
+\end{lstlisting}
+
+
 \subsection{Strained crystals} \label{strcr}
 The recursion formulae (\ref{refl}) and (\ref{trans}) can be used for samples made of different epitaxial layers, but also hold for a single crystal with a given strain profile. The strained crystal is treated as a stack of layers with constant strain. To do so a new class of \textit{Epitaxial\_Layer} was defined. An instance of a \textit{Strained\_Layer} requires two arrays of the same length: an array containing the depths (distances from the substrate surface) and an array containing the strain of a lattice parameter (for example $\frac{\Delta a}{a}$) at different depths.
 
-The amplitudes of the reflected and transmitted beams are calculated for each sublayer with constant strain by substituting the value of the modified lattice parameter in the expressions and using equations \ref{XR} and \ref{XT}. The total amplitudes of the layer are then obtained by iterating the formulas \ref{refl} and \ref{trans} through all sublayers.
+The amplitudes of reflected and transmitted beams are calculated for each sublayer with constant strain by substituting the value of the modified lattice parameter in the expressions and using equations \ref{XR} and \ref{XT}. The total amplitudes of the layer are then obtained by iterating the formulas \ref{refl} and \ref{trans} through all sublayers.
 
 %code?
 
-%calc ampl and print values
+%print values
 
 
 \section{Results}
@@ -318,7 +430,7 @@ The program \textit{dynXRD} was first tested by comparing the results with the p
 
 
 \subsection{Rocking curves of crystalline multilayers}\label{res1}
-Figure \ref{testsMgO} shows the simulated rocking curves of a MgO (cubic unit cell) layer of thickness $100\;nm$ for a $002$ reflection with energy $10\; keV$ and different geometries.
+Figures \ref{testsMgO} and \ref{testsLiNbO3} show the simulated rocking curves of crystalline layers (cubic MgO and trigonal LiNbO$ _3$) of thickness $100\;nm$ when an incident beam of energy $10\; keV$ is applied. 
 
 \begin{figure}[h]
  \centering
@@ -334,8 +446,6 @@ Figure \ref{testsMgO} shows the simulated rocking curves of a MgO (cubic unit ce
  \end{subfigure}
  \caption{$002$ reflection for a MgO layer of thickness $100\;nm$ in non-coplanar geometry.}\label{testsMgO}
 \end{figure}
-
-The plots in figure \ref{testsLiNbO3} show the reflectivity of a LiNbO$ _3$ (trigonal unit cell) layer of thickness $100\;nm$ for a $300$ reflection with energy $10\; keV$.
 
 \begin{figure}[h]
  \centering
@@ -355,23 +465,25 @@ It can be noted that simulations made with \textit{GID\_sl} and \textit{dynXRD} 
 
 \subsection{Diffraction profiles of strained crystals}\label{res2}
 
-Simulations of strained crystals are shown in figure \ref{testsstrain}.
-\begin{figure}
+Simulations of strained crystals are shown in figure \ref{testsstrain}. The main peak exhibits a Darwin plateau which is due to reflection from the substrate. On the other hand, smaller peaks reveal the presence of the strained layer. Both plots show a $002$ reflection with energy $10\; keV$. The substrate and the layer have the same structure and orientation. The layer is $100\; nm$ thick and has $1\%$ lattice strain.
+\begin{figure}[h]
  \centering
  \begin{subfigure}[h]{0.49\textwidth}
   \includegraphics[width=\textwidth]{pics/test12.eps}
-  \caption{}\label{test12}
+  \caption{MgO (cubic unit cell): symmetric, coplanar case.}\label{test12}
   \label{test12}
  \end{subfigure}
  \begin{subfigure}[h]{0.49\textwidth}
   \includegraphics[width=\textwidth]{pics/test14.eps}
-  \caption{}\label{test14}
+  \caption{BaTiO$ _3$ (tetragonal unit cell): asymmetric, non-coplanar case.}\label{test14}
   \label{test14}
  \end{subfigure}
- \caption{}\label{testsstrain}
+ \caption{002 reflection for strained crystals.}\label{testsstrain}
 \end{figure}
 
-\begin{figure}
+
+Figure \ref{GaAs_both} shows the 004 Cu $K\alpha_1$ reflection of a structure consisting of four epitaxial GaAs layers of different thickness on a GaAs substrate. The substrate surface is taken as the origin of the thickness scale in the depth profile. The plot in figure \ref{GaAs_article} from Bartels et al. \cite{Bartels:a25435} compares diffraction profiles calculated with the dynamical and kinematical theory, while figure \ref{GaAs} shows a simulation made with \textit{dynXRD}.
+\begin{figure}[h]
  \centering
  \begin{subfigure}[h]{0.49\textwidth}
   \includegraphics[width=\textwidth]{pics/GaAs.eps}
@@ -387,14 +499,54 @@ Simulations of strained crystals are shown in figure \ref{testsstrain}.
 \end{figure}
 
 \subsection{Comparison with experimental data}\label{data}
+The program was used to investigate the strain profile of a sample of SrTiO$ _3$. An external electric field was applied on the crystal, inducing a transition from a cubic symmetry to a tetragonal symmetry. Therefore, a model was developed assuming the following function for the strain of the $c$ parameter
+\begin{equation}
+ \frac{\Delta c}{c}=A e^{-x}(1+x)
+\end{equation}
+where $A$ is the maximum strain and $x$ is the relative depth (i.e. $x=depth/t_s$ where $t_s$ is related to the thickness of the distorted layer). Gaussian and lorenztian functions were also tested but showed lower compatibility with experimental data.
+The reflectivity of the sample was measured for the $002$ reflection in a symmetric coplanar geometry ($Energy=8 keV$).
+The model parameters $A$ and $t_s$ where then fitted against the measured data. Figure \ref{SrTiO3_2} shows a plot of the resulting fitting function compared to experimental data.
+
+
+
 \begin{figure}[h]
 \begin{center}
-\includegraphics[width=10cm]{pics/SrTiO3_2.eps}
-\caption{}
+\includegraphics[width=\textwidth]{pics/SrTiO3_2.eps}
+\caption{002 symmetric coplanar reflection from a strained sample of SrTiO$ _3$.}
 \label{SrTiO3_2}
 \end{center}
 \end{figure}
 
+The estimated values are approximately $1 \%$ for the maximum strain and $0.6 \mu m$ for the strain thickness.\\
+%$A=(1.034 \pm 0.004) \%$ and $t_s=(5.93 \pm 0.06) \mu m$
+
+The same model was applied for fitting with different energies of the incident beam.
+
+
+\begin{figure}[h]
+ \centering
+ \begin{subfigure}[h]{0.49\textwidth}
+  \includegraphics[width=\textwidth]{pics/SrTiO3_4880.eps}
+  \caption{}
+  \label{en1}
+ \end{subfigure}
+ \begin{subfigure}[h]{0.49\textwidth}
+  \includegraphics[width=\textwidth]{pics/SrTiO3_4976.eps}
+  \caption{}
+  \label{en2}
+ \end{subfigure}\\
+ \begin{subfigure}[h]{0.49\textwidth}
+  \includegraphics[width=\textwidth]{pics/SrTiO3_4996.eps}
+  \caption{}
+  \label{en3}
+ \end{subfigure}
+ \begin{subfigure}[h]{0.49\textwidth}
+  \includegraphics[width=\textwidth]{pics/SrTiO3_5075.eps}
+  \caption{}
+  \label{en4}
+ \end{subfigure}
+ \caption{}\label{en}
+\end{figure}
 
 \clearpage 
 
