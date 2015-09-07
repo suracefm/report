@@ -85,7 +85,7 @@ In the method first developed by C. G. Darwin in 1914, the crystal is treated as
 
 %Bragg
 
-\subsection{One atomic layer: reflection and transmission}\label{onelayer}
+\subsection{One layer: reflection and transmission}\label{onelayer}
 
 \begin{figure}[h]
 \begin{center}
@@ -131,8 +131,9 @@ where
 Since $V$ is of order $d^3$, $g_\mathbf{H}$ and $g_0$ are of order $r_0/d \simeq 10^{-5} \ll 1$.
 
 \newpage
-\subsection{Diffraction from a set of atomic planes}
+\subsection{Diffraction from a set of planes}
 \begin{wrapfigure}{r}{0.4\textwidth}
+\vspace{-40pt}
 \begin{center}
 \includegraphics[width=7cm]{pics/picture3.png}
 \caption{}
@@ -145,7 +146,7 @@ Both outside and within the crystal there are two wavefields: the $T$ field prop
 
 
 
-The derivation of Bragg's law relies on the fact that the reflected wave from layer $r+1$ is in phase with the one from layer $r$ if the pathlength differs by an integer number of wavelengths. 
+The derivation of Bragg's law relies on the fact that the reflected wave from layer $r+1$ is in phase with the one from layer $r$ if the pathlength differs by an integer number of wavelengths (equation \ref{bragg}). 
 \begin{equation}\label{bragg}
  2\sin{\theta_B}=m\lambda
 \end{equation}
@@ -168,9 +169,7 @@ Next consider the $T$ field just below the $r$th layer. The phase is shifted by 
 
 A suitable trial solution for \ref{eq:TS1} and \ref{eq:TS2} including a phase shift and attenuation has the form
 \begin{equation}
-T_{r+1}=e^{-\chi}e^{im\pi}T_r
-\end{equation}
-\begin{equation}
+T_{r+1}=e^{-\chi}e^{im\pi}T_r, \quad
 S_{r+1}=e^{-\chi}e^{im\pi}S_r
 \end{equation}
 where $\chi$ is a general complex. We can now insert our trial solution into the equations. Noting that $e^{-i\phi}=e^{-im\pi}e^{-i\Delta}$ and expanding all the small parameters to second-order terms yields
@@ -206,11 +205,52 @@ From equation \ref{eq:r} the amplitude reflectivity curve in terms of $\eta$ is
 
 \subsection{General case: substrate}
 %picture
-In general the surface of the crystal will not be parallel to the atomic planes which reflect the incident beam, as shown in picture X. This implies a compression of the width of the exit beam. The asymmetry parameter $b$ is defined as
+
+\begin{wrapfigure}{l}{0.5\textwidth}
+\begin{center}
+\vspace{-30pt}
+\scalebox{0.8} % Change this value to rescale the drawing.
+{
+\begin{pspicture}(-4,-1.5)(4,4)
+\psline[linewidth=0.04cm,arrowsize=0.08cm 2.0,arrowlength=1.4,arrowinset=0.4]{->}(0,0)(3,2)
+\psline[linewidth=0.04cm,arrowsize=0.08cm 2.0,arrowlength=1.4,arrowinset=0.4]{->}(-3,2)(0,0)
+\psline[linewidth=0.04cm,arrowsize=0.08cm 2.0,arrowlength=1.4,arrowinset=0.4,linestyle=dashed,dash=0.16cm 0.16cm]{->}(0,0)(0,4)
+\psline[linewidth=0.04cm,arrowsize=0.08cm 2.0,arrowlength=1.4,arrowinset=0.4]{->}(-2,-0.8)(1,1.2)
+\psline[linewidth=0.04cm,arrowsize=0.08cm 2.0,arrowlength=1.4,arrowinset=0.4]{->}(-5,1.2)(-2,-0.8)
+\psline[linewidth=0.04cm,arrowsize=0.08cm 2.0,arrowlength=1.4,arrowinset=0.4]{<->}(-1.615,1.077)(-2.6,-0.4)
+\psline[linewidth=0.04cm,arrowsize=0.08cm 2.0,arrowlength=1.4,arrowinset=0.4]{<->}(0.354,0.769)(0.6,0.4)
+\psline[linewidth=0.04cm,arrowsize=0.08cm 2.0,arrowlength=1.4,arrowinset=0.4,linestyle=dashed,dash=0.16cm 0.16cm]{->}(0,0)(-0.8,2)
+\psline[linewidth=0.04cm](-4,-1.6)(4,1.6)
+\psline[linewidth=0.04cm](-4,-1.6)(4,-1.6)
+\psline[linewidth=0.04cm](-0,0)(4,0)
+\psline[linewidth=0.04cm](-2,-0.8)(4,-0.8)
+\psline[linewidth=0.04cm](2,0.8)(4,0.8)
+\psline[linewidth=0.04cm](-1,-0.4)(4,-0.4)
+\psline[linewidth=0.04cm](1,0.4)(4,0.4)
+\psline[linewidth=0.04cm](-3,-1.2)(4,-1.2)
+\psline[linewidth=0.04cm](3,1.2)(4,1.2)
+\rput(-1.5,1.5){$\mathbf{k_{in}}$}
+\rput(1.5,1.5){$\mathbf{k_{out}}$}
+\rput(0.2,2){$\mathbf{q}$}
+\rput(-0.6,2.1){$\mathbf{n}$}
+\end{pspicture} 
+}
+\caption{}
+\label{asymmpic}
+\vspace{-10pt}
+\end{center}
+\end{wrapfigure}
+
+
+In general the surface of the crystal will not be parallel to the atomic planes which reflect the incident beam, as shown in picture \ref{asymmpic}. This implies a compression of the width of the exit beam. The asymmetry parameter $b$ is defined as
 \begin{equation}\label{bdef}
  b=\frac{\gamma_0}{\gamma_\mathbf{H}}
 \end{equation}
-where $\gamma_0$ is the cosine of the angle between the incident beam and the surface normal and $\gamma_H$ is the cosine of the angle between the diffracted beam and the surface normal (in the Bragg case $b$ is always negative).
+where $\gamma_0$ is the cosine of the angle between the incident beam and the surface normal and $\gamma_H$ is the cosine of the angle between the diffracted beam and the surface normal (equation \ref{gamma}; in the Bragg case $b$ is always negative).
+\begin{equation}\label{gamma}
+\gamma_0=\frac{\mathbf{k_{in}}\cdot \hat{n}}{|\mathbf{k_{in}}|},\quad \gamma_\mathbf{H}=\frac{\mathbf{k_{out}}\cdot \hat{n}}{|\mathbf{k_{out}}|}
+\end{equation}
+
 
 Equation \ref{eq:darwin} is still valid in the asymmetric case if we include the asymmetric parameter in the variable $\eta$ as follows
 \begin{equation}\label{asymm}
@@ -252,15 +292,40 @@ The absolute squares of $X_R$ and $X_T$ are the reflectivity (figure \ref{dyn}) 
 
 \begin{figure}[h]
 \begin{center}
-\includegraphics[width=\textwidth]{pics/dynamical.eps}
+\includegraphics[width=12 cm]{pics/dynamical.eps}
 \caption{Darwin curve of a MgO $002$ reflection. If X-ray absorption were absent, the top of the curve of the infinitely thick crystal would be flat (Darwin plateau).}
 \label{dyn}
 \end{center}
 \end{figure}
 
 
-
+\newpage
 \subsection{Recursion formulae}
+
+
+
+%picture, more words
+When an epitaxial layer with reflected and transmitted amplitude ratios $X_R^1$ and $X_T^1$ is added to a substrate with ratios $X_R^0$, $X_T^0$, the new amplitude ratios $X_t$, $W$ for the crystal can be derived in a recursive way. In combining the crystal parts in figure \ref{rec}, the incident beam of the lower part is replaced by the transmitted beam of the upper part. Owing to multiple reflections the amplitude ratios will vary but can be expressed in the original values $X_R^0$, $X_T^0$, $X_R^1$ and $X_T^1$, so that
+\begin{equation}
+ X_t=X_T^1 Y+X_R^1
+\end{equation}
+\begin{equation}
+ Z=X_R^1 Y+X_T^1
+\end{equation}
+\begin{equation}
+ Y=X_R^0 Z
+\end{equation}
+\begin{equation}
+ W=X_T^0 Z.
+\end{equation}
+
+After substitution, we obtain the reflected and transmitted amplitude ratios for the sample
+\begin{equation}\label{refl}
+ X_t=\frac{X_R^1-X_R^0({X_R^1}^2-{X_T^1}^2)}{1-X_R^0 X_R^1}
+\end{equation}
+\begin{equation}\label{trans}
+ W=\frac{X_T^0 X_T^1}{1-X_R^0 X_R^1}.
+\end{equation}
 
 \begin{figure}[h]
 \begin{center}
@@ -290,31 +355,6 @@ The absolute squares of $X_R$ and $X_T$ are the reflectivity (figure \ref{dyn}) 
 \label{rec}
 \end{center}
 \end{figure}
-
-%picture, more words
-When an epitaxial layer with reflected and transmitted amplitude ratios $X_R^1$ and $X_T^1$ is added to a substrate with ratios $X_R^0$, $X_T^0$, the new amplitude ratios $X_t$, $W$ for the crystal can be derived in a recursive way. In combining the crystal parts in figure X, the incident beam of the lower part is replaced by the transmitted beam of the upper part. Owing to multiple reflections the amplitude ratios will vary but can be expressed in the original values $X_R^0$, $X_T^0$, $X_R^1$ and $X_T^1$, so that
-\begin{equation}
- X_t=X_T^1 Y+X_R^1
-\end{equation}
-\begin{equation}
- Z=X_R^1 Y+X_T^1
-\end{equation}
-\begin{equation}
- Y=X_R^0 Z
-\end{equation}
-\begin{equation}
- W=X_T^0 Z.
-\end{equation}
-
-After substitution, we obtain the reflected and transmitted amplitude ratios for the sample
-\begin{equation}\label{refl}
- X_t=\frac{X_R^1-X_R^0({X_R^1}^2-{X_T^1}^2)}{1-X_R^0 X_R^1}
-\end{equation}
-\begin{equation}\label{trans}
- W=\frac{X_T^0 X_T^1}{1-X_R^0 X_R^1}.
-\end{equation}
-
-
 
 
 
@@ -349,8 +389,49 @@ Once the Miller indices (with respect to the substrate) are given by the user th
 The geometry of each crystal layer is needed in order to calculate the change in the angle $\theta$ and the quantities $\gamma_0$ and $\gamma_\mathbf{H}$ that we used to define the asymmetry parameter $b$ (equation \ref{bdef}).
 
 
+\begin{figure}[h]
+\begin{center}
+\scalebox{1} % Change this value to rescale the drawing.
+{
+\begin{pspicture}(-3,-2)(3,4)
+\pspolygon[linewidth=0.04](-3,0)(3,0)(1.8,-1.6)(-4.2,-1.6)
+\pspolygon[linewidth=0.04](-3,0)(3,0)(3.8,3.6)(-2.2,3.6)
+\psline[linewidth=0.04cm](3,0)(4.2,1.6)
+\psline[linewidth=0.04cm](3.35,1.6)(4.2,1.6)
+\psline[linewidth=0.04cm,arrowsize=0.06cm 2.0,arrowlength=1.4,arrowinset=0.4]{->}(-0.75,1.75)(0,0)
+\psline[linewidth=0.04cm,arrowsize=0.06cm 2.0,arrowlength=1.4,arrowinset=0.4]{->}(0,0)(1.95,0.95)
+\psline[linewidth=0.04cm,arrowsize=0.06cm 2.0,arrowlength=1.4,arrowinset=0.4]{->}(0,0)(1.2,2.7)
+\psline[linewidth=0.04cm,arrowsize=0.06cm 2.0,arrowlength=1.4,arrowinset=0.4, linestyle=dashed,dash=0.1cm 0.1cm]{->}(0,0)(0,1.5)
+\psline[linewidth=0.04cm, linestyle=dashed,dash=0.06cm 0.06cm](0.6,-2)(-1.2,-1.6)
+\psline[linewidth=0.04cm, linestyle=dashed,dash=0.06cm 0.06cm](-0.4,-2)(-2.2,-1.6)
+\psline[linewidth=0.04cm, linestyle=dashed,dash=0.06cm 0.06cm](-1.4,-2)(-3.2,-1.6)
+\psline[linewidth=0.04cm, linestyle=dashed,dash=0.06cm 0.06cm](-2.4,-2)(-4.2,-1.6)
+\psline[linewidth=0.04cm, linestyle=dashed,dash=0.06cm 0.06cm](1.6,-2)(-0.2,-1.6)
+\psline[linewidth=0.04cm, linestyle=dashed,dash=0.06cm 0.06cm](2.6,-2)(0.8,-1.6)
+\psline[linewidth=0.04cm, linestyle=dashed,dash=0.06cm 0.06cm](3.6,-2)(1.8,-1.6)
+\psline[linewidth=0.04cm,arrowsize=0.06cm 2.0,arrowlength=1.4,arrowinset=0.4]{->}(5,0)(6.5,0)
+\psline[linewidth=0.04cm,arrowsize=0.06cm 2.0,arrowlength=1.4,arrowinset=0.4]{->}(5,0)(5,1.5)
+\psline[linewidth=0.04cm,arrowsize=0.06cm 2.0,arrowlength=1.4,arrowinset=0.4]{->}(5,0)(5.9,1.2)
+\psarc[linewidth=0.04](0.05,0.15){0.37}{13}{127}
+\rput(-0.65,0.7){$\mathbf{k_{in}}$}
+\rput(1.8,0.5){$\mathbf{k_{out}}$}
+\rput(0.95,1.5){$\mathbf{q}$}
+\rput(0.15,1.7){$\hat{n}$}
+\rput(6.7,0){$\hat{x}$}
+\rput(5.9,0.8){$\hat{y}$}
+\rput(4.7,0.5){$\hat{z}$}
+\rput(0.5,0.5){$\theta$}
+\rput(-0,0.7){$\theta$}
+\end{pspicture} 
+}
+\caption{Asymmetric reflection in non-coplanar geometry.}
+\label{geom2}
+\end{center}
+\end{figure}
+
+
 Let $\mathbf{a}$, $\mathbf{b}$ and $\mathbf{c}$ be the lattice vector and $\mathbf{a^*}$, $\mathbf{b^*}$ and $\mathbf{c^*}$ the reciprocal lattice vectors.
-Let $\hat{x}$, $\hat{y}$ and $\hat{z}$ be the unit vectors of the sample system, such that the normal to the sample surface is parallel to $\hat{z}$ and that $\hat{x}$ lies on the scattering plane.
+Let $\hat{x}$, $\hat{y}$ and $\hat{z}$ be the unit vectors of the sample system, such that the normal to the sample surface $\hat{n}$ is parallel to $\hat{z}$ and that $\hat{x}$ lies on the scattering plane.
 The geometry of the crystal layers can be specified in 2 different ways.
 With the method \textit{Epitaxial\_Layer.calc\_orientation} the user can set the coordinates in the reciprocal lattice system of two vectors $\mathbf{v_\perp}$ and $\mathbf{v_\parallel}$ which are respectively parallel to $\hat{z}$ and $\hat{x}$. The two vectors given should be perpendicular by definition. If this is not the case an error message is printed. To prevent this, the method \textit{Epitaxial\_Layer.calc\_orientation\_from\_angle} was developed: the user can give as input an angle $\psi$, which is the angle between $\mathbf{v_\parallel}$ and a reference vector $\mathbf{p}$. The vector $\mathbf{p}$ is defined as the vector perpendicular to $\mathbf{b^*}$ and $\mathbf{v_\perp}$:
 \begin{equation}
@@ -363,29 +444,31 @@ If $\mathbf{b^*}$ and $\mathbf{v_\perp}$ are parallel then $\mathbf{p}$ is defin
 Specification of $\mathbf{v_\parallel}$ is no longer required since it can be calculated from $\psi$. Now $\mathbf{v_\parallel}$ is automatically perpendicular to $\mathbf{v_\perp}$ and no errors occur.
 
 
-\begin{figure}[h]
+\begin{wrapfigure}{r}{0.3\textwidth}
 \begin{center}
+\vspace{-10pt}
 \scalebox{1} % Change this value to rescale the drawing.
 {
 \begin{pspicture}(0,0)(4.5,2.6)
 \pspolygon[linewidth=0.04](0.0,0)(3.5,0)(4.5,2)(1,2)
 \psline[linewidth=0.04cm,arrowsize=0.06cm 2.0,arrowlength=1.4,arrowinset=0.4]{->}(2,1)(2,2.6)
-\psline[linewidth=0.04cm,arrowsize=0.06cm 2.0,arrowlength=1.4,arrowinset=0.4]{->}(2,1)(3.1,1.6)
+\psline[linewidth=0.04cm,arrowsize=0.06cm 2.0,arrowlength=1.4,arrowinset=0.4]{->}(2,1)(3.15,1.65)
 \psline[linewidth=0.04cm,arrowsize=0.06cm 2.0,arrowlength=1.4,arrowinset=0.4]{->}(2,1)(3.3,0.9)
 \psarc[linewidth=0.04](2.5, 1.1){0.24}{320}{75.0}
 \rput(1.7,1.5){$\mathbf{v_\perp}$}
 \rput(2.6,1.6){$\mathbf{p}$}
-%\rput(2.9,1.6){$Y$}
+\rput(2.8,0.6){$\mathbf{v_\parallel}$}
+\rput(3,1.2){$\psi$}
 \end{pspicture} 
 }
 \caption{}
-\label{rec}
+\label{geom1}
 \end{center}
-\end{figure}
+\end{wrapfigure}
 
 The vector $\mathbf{v_\perp}$ and $\mathbf{v_\parallel}$ specify the geometry of the reflection.
 If $\mathbf{v_\perp}$ and $\mathbf{H}$ are parallel - i.e. if the asymmetry factor $b$ is equal to $-1$ - the reflection is \textit{symmetric}. If this condition is not fulfilled the reflection is said to be \textit{asymmetric}.
-We call the geometry \textit{coplanar} where the incident wave vector $\mathbf{k_0}$, the reciprocal lattice vector $\mathbf{H}$, and the surface normal $\mathbf{n}$ lie in the same plane or equivalently when $\mathbf{v_\parallel}$, $\mathbf{v_\perp}$ and $\mathbf{H}$ are coplanar.
+We call the geometry \textit{coplanar} when the incident wave vector $\mathbf{k_{in}}$, the reciprocal lattice vector $\mathbf{H}$, and the surface normal $\mathbf{n}$ lie in the same plane or equivalently when $\mathbf{v_\parallel}$, $\mathbf{v_\perp}$ and $\mathbf{H}$ are coplanar.
 
 %details?
 %code?
@@ -480,7 +563,7 @@ Simulations of strained crystals are shown in figure \ref{testsstrain}. The main
 \end{figure}
 
 
-Figure \ref{GaAs_both} shows the 004 Cu $K\alpha_1$ reflection of a structure consisting of four epitaxial GaAs layers of different thickness on a GaAs substrate. The substrate surface is taken as the origin of the thickness scale in the depth profile. The plot in figure \ref{GaAs_article} from Bartels et al. \cite{Bartels:a25435} compares diffraction profiles calculated with the dynamical and kinematical theory, while figure \ref{GaAs} shows a simulation made with \textit{dynXRD}.
+Figure \ref{GaAs_both} shows the 004 Cu $K\alpha_1$ reflection of a structure consisting of four epitaxial GaAs layers of different thickness on a GaAs substrate \cite{Bartels:a25435}. 
 \begin{figure}[h]
  \centering
  \begin{subfigure}[h]{0.49\textwidth}
@@ -488,12 +571,13 @@ Figure \ref{GaAs_both} shows the 004 Cu $K\alpha_1$ reflection of a structure co
   \caption{}
   \label{GaAs}
  \end{subfigure}
- \begin{subfigure}[h]{0.49\textwidth}
-  \includegraphics[width=\textwidth]{pics/GaAs.png}
+ \begin{subfigure}[h]{0.50\textwidth}
+  \includegraphics[width=1.2\textwidth]{pics/GaAs.png}
   \caption{}
   \label{GaAs_article}
  \end{subfigure}
- \caption{}\label{GaAs_both}
+ \caption{The substrate surface is taken as the origin of the thickness scale in the depth profile. The plot in figure \ref{GaAs_article} from Bartels et al. \cite{Bartels:a25435} compares diffraction profiles calculated with the dynamical and kinematical theory, while figure \ref{GaAs} shows a simulation made with \textit{dynXRD}.
+}\label{GaAs_both}
 \end{figure}
 
 \subsection{Comparison with experimental data}\label{data}
@@ -518,33 +602,33 @@ The model parameters $A$ and $t_s$ where then fitted against the measured data. 
 The estimated values are approximately $1 \%$ for the maximum strain and $0.6 \mu m$ for the strain thickness.\\
 %$A=(1.034 \pm 0.004) \%$ and $t_s=(5.93 \pm 0.06) \mu m$
 
-The same model was applied for fitting with different energies of the incident beam.
-
-
-\begin{figure}[h]
- \centering
- \begin{subfigure}[h]{0.49\textwidth}
-  \includegraphics[width=\textwidth]{pics/SrTiO3_4880.eps}
-  \caption{}
-  \label{en1}
- \end{subfigure}
- \begin{subfigure}[h]{0.49\textwidth}
-  \includegraphics[width=\textwidth]{pics/SrTiO3_4976.eps}
-  \caption{}
-  \label{en2}
- \end{subfigure}\\
- \begin{subfigure}[h]{0.49\textwidth}
-  \includegraphics[width=\textwidth]{pics/SrTiO3_4996.eps}
-  \caption{}
-  \label{en3}
- \end{subfigure}
- \begin{subfigure}[h]{0.49\textwidth}
-  \includegraphics[width=\textwidth]{pics/SrTiO3_5075.eps}
-  \caption{}
-  \label{en4}
- \end{subfigure}
- \caption{}\label{en}
-\end{figure}
+% The same model was applied for fitting with different energies of the incident beam.
+% 
+% 
+% \begin{figure}[h]
+%  \centering
+%  \begin{subfigure}[h]{0.49\textwidth}
+%   \includegraphics[width=\textwidth]{pics/SrTiO3_4880.eps}
+%   \caption{}
+%   \label{en1}
+%  \end{subfigure}
+%  \begin{subfigure}[h]{0.49\textwidth}
+%   \includegraphics[width=\textwidth]{pics/SrTiO3_4976.eps}
+%   \caption{}
+%   \label{en2}
+%  \end{subfigure}\\
+%  \begin{subfigure}[h]{0.49\textwidth}
+%   \includegraphics[width=\textwidth]{pics/SrTiO3_4996.eps}
+%   \caption{}
+%   \label{en3}
+%  \end{subfigure}
+%  \begin{subfigure}[h]{0.49\textwidth}
+%   \includegraphics[width=\textwidth]{pics/SrTiO3_5075.eps}
+%   \caption{}
+%   \label{en4}
+%  \end{subfigure}
+%  \caption{}\label{en}
+% \end{figure}
 
 \clearpage 
 
