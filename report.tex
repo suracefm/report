@@ -90,8 +90,10 @@ In the method first developed by C. G. Darwin in 1914, the crystal is treated as
 \begin{figure}[h]
 \begin{center}
 \includegraphics[width=12cm]{pics/picture1.png}
+\vspace{-10pt}
 \caption{Representation of X-rays from a point source $S$ falling on a layer in the $XY$-plane near the Bragg condition. Scattered radiation is observed at the point $P$. For the origin $O$, the path length $R+r$ is a minimum.}
 \label{pic1}
+\vspace{-10pt}
 \end{center}
 \end{figure}
 
@@ -112,8 +114,10 @@ where $r_e=\frac{e^2}{mc^2}=2.818 \cdot 10^{-5} \AA{}$ is the classical electron
 \begin{figure}[h]
 \begin{center}
 \includegraphics[width=7cm]{pics/picture2.png}
-\caption{}
+\vspace{-10pt}
+\caption{For the scattering by the atoms in a plane, the path lengths are the same for a point $P$ and its mirror image $P'$.}
 \label{pic2}
+\vspace{-10pt}
 \end{center}
 \end{figure}
 
@@ -136,7 +140,7 @@ Since $V$ is of order $d^3$, $g_\mathbf{H}$ and $g_0$ are of order $r_0/d \simeq
 \vspace{-40pt}
 \begin{center}
 \includegraphics[width=7cm]{pics/picture3.png}
-\caption{}
+\caption{Diffraction from a set of atomic planes.}
 \label{pic3}
 \end{center}
 \end{wrapfigure}We now turn our attention to the problem of how to calculate the scattering from an infinite stack of atomic planes, where each one reflects and transmits the incident wave according to the equations given in section \ref{onelayer}. The planes are labelled by the index $r$, with the surface plane defined by $r=0$. The objective is to calculate the amplitude reflectivity, which is the ratio of the total reflected wavefield $S_0$ to that of the incident field $T_0$.
@@ -208,7 +212,7 @@ From equation \ref{eq:r} the amplitude reflectivity curve in terms of $\eta$ is
 
 \begin{wrapfigure}{l}{0.5\textwidth}
 \begin{center}
-\vspace{-30pt}
+\vspace{-20pt}
 \scalebox{0.8} % Change this value to rescale the drawing.
 {
 \begin{pspicture}(-4,-1.5)(4,4)
@@ -235,9 +239,8 @@ From equation \ref{eq:r} the amplitude reflectivity curve in terms of $\eta$ is
 \rput(-0.6,2.1){$\mathbf{n}$}
 \end{pspicture} 
 }
-\caption{}
+\caption{Asymmetric Bragg reflection. The widths of the incident and scattered beams are different.}
 \label{asymmpic}
-\vspace{-10pt}
 \end{center}
 \end{wrapfigure}
 
@@ -301,32 +304,7 @@ The absolute squares of $X_R$ and $X_T$ are the reflectivity (figure \ref{dyn}) 
 
 \newpage
 \subsection{Recursion formulae}
-
-
-
-%picture, more words
-When an epitaxial layer with reflected and transmitted amplitude ratios $X_R^1$ and $X_T^1$ is added to a substrate with ratios $X_R^0$, $X_T^0$, the new amplitude ratios $X_t$, $W$ for the crystal can be derived in a recursive way. In combining the crystal parts in figure \ref{rec}, the incident beam of the lower part is replaced by the transmitted beam of the upper part. Owing to multiple reflections the amplitude ratios will vary but can be expressed in the original values $X_R^0$, $X_T^0$, $X_R^1$ and $X_T^1$, so that
-\begin{equation}
- X_t=X_T^1 Y+X_R^1
-\end{equation}
-\begin{equation}
- Z=X_R^1 Y+X_T^1
-\end{equation}
-\begin{equation}
- Y=X_R^0 Z
-\end{equation}
-\begin{equation}
- W=X_T^0 Z.
-\end{equation}
-
-After substitution, we obtain the reflected and transmitted amplitude ratios for the sample
-\begin{equation}\label{refl}
- X_t=\frac{X_R^1-X_R^0({X_R^1}^2-{X_T^1}^2)}{1-X_R^0 X_R^1}
-\end{equation}
-\begin{equation}\label{trans}
- W=\frac{X_T^0 X_T^1}{1-X_R^0 X_R^1}.
-\end{equation}
-
+When an epitaxial layer with reflected and transmitted amplitude ratios $X_R^1$ and $X_T^1$ is added to a substrate with ratios $X_R^0$, $X_T^0$, the new amplitude ratios $X_t$, $W$ for the crystal can be derived in a recursive way. In combining the crystal parts in figure \ref{rec}, the incident beam of the lower part is replaced by the transmitted beam of the upper part.
 \begin{figure}[h]
 \begin{center}
 \scalebox{1}
@@ -351,10 +329,35 @@ After substitution, we obtain the reflected and transmitted amplitude ratios for
 \rput(4.9,1.1){$X_R^0$, $X_T^0$}
 \end{pspicture} 
 }
-\caption{}
+\caption{In the recursion process a thin layer of thickness $t$ is added to the previous layer so that the reflected and transmitted amplitude ratios at the surface change from $X_R^0$, $X_T^0$ to $X_t$, $W$.}
 \label{rec}
 \end{center}
 \end{figure}
+
+
+
+Owing to multiple reflections the amplitude ratios will vary but can be expressed in the original values $X_R^0$, $X_T^0$, $X_R^1$ and $X_T^1$, so that
+\begin{equation}
+ X_t=X_T^1 Y+X_R^1
+\end{equation}
+\begin{equation}
+ Z=X_R^1 Y+X_T^1
+\end{equation}
+\begin{equation}
+ Y=X_R^0 Z
+\end{equation}
+\begin{equation}
+ W=X_T^0 Z.
+\end{equation}
+
+After substitution, we obtain the reflected and transmitted amplitude ratios for the sample
+\begin{equation}\label{refl}
+ X_t=\frac{X_R^1-X_R^0({X_R^1}^2-{X_T^1}^2)}{1-X_R^0 X_R^1}
+\end{equation}
+\begin{equation}\label{trans}
+ W=\frac{X_T^0 X_T^1}{1-X_R^0 X_R^1}.
+\end{equation}
+
 
 
 
@@ -441,7 +444,7 @@ If $\mathbf{b^*}$ and $\mathbf{v_\perp}$ are parallel then $\mathbf{p}$ is defin
 \begin{equation}
  \mathbf{p}=\mathbf{v_\perp} \times \mathbf{c^*}
 \end{equation}
-Specification of $\mathbf{v_\parallel}$ is no longer required since it can be calculated from $\psi$. Now $\mathbf{v_\parallel}$ is automatically perpendicular to $\mathbf{v_\perp}$ and no errors occur.
+
 
 
 \begin{wrapfigure}{r}{0.3\textwidth}
@@ -461,10 +464,13 @@ Specification of $\mathbf{v_\parallel}$ is no longer required since it can be ca
 \rput(3,1.2){$\psi$}
 \end{pspicture} 
 }
-\caption{}
+\caption{Geometrical characterization of the Bragg reflection.}
+\vspace{-10pt}
 \label{geom1}
 \end{center}
 \end{wrapfigure}
+
+Specification of $\mathbf{v_\parallel}$ is no longer required since it can be calculated from $\psi$. Now $\mathbf{v_\parallel}$ is automatically perpendicular to $\mathbf{v_\perp}$ and no errors occur.
 
 The vector $\mathbf{v_\perp}$ and $\mathbf{v_\parallel}$ specify the geometry of the reflection.
 If $\mathbf{v_\perp}$ and $\mathbf{H}$ are parallel - i.e. if the asymmetry factor $b$ is equal to $-1$ - the reflection is \textit{symmetric}. If this condition is not fulfilled the reflection is said to be \textit{asymmetric}.
@@ -478,7 +484,7 @@ We call the geometry \textit{coplanar} when the incident wave vector $\mathbf{k_
 \subsection{Reflectivity}
 Calculation of reflected and transmitted amplitudes of a layer is implemented via the methods \textit{Epitaxial\_Layer.calc\_parameters} and \textit{Epitaxial\_Layer.calc\_amplitudes} which apply equations \ref{eq:darwin} (for the substrate), \ref{XR} and \ref{XT} (for the epitaxial layers).
 
-After solving the dynamical diffraction problem for each layer, the reflection from the whole stack is calculated with the equations \ref{refl} and \ref{trans}:
+After solving the dynamical diffraction problem for each layer, the reflection from the whole stack is calculated with equation \ref{refl}:
 \begin{lstlisting}
     def calc_reflectivity(self, theta, Energy, Polarization=1):
         self.calc_theta_layer()
@@ -544,6 +550,7 @@ Figures \ref{testsMgO} and \ref{testsLiNbO3} show the simulated rocking curves o
 \end{figure}
 It can be noted that simulations made with \textit{GID\_sl} and \textit{dynXRD} give analogous results in all cases even though the methods used by the programs are different.
 
+\newpage
 \subsection{Diffraction profiles of strained crystals}\label{res2}
 
 Simulations of strained crystals are shown in figure \ref{testsstrain}. The main peak exhibits a Darwin plateau which is due to reflection from the substrate. On the other hand, smaller peaks reveal the presence of the strained layer. Both plots show a $002$ reflection with energy $10\; keV$. The substrate and the layer have the same structure and orientation. The layer is $100\; nm$ thick and has $1\%$ lattice strain.

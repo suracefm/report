@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.5-0.9999.3 (TeX Live 2013/Debian) (format=xelatex 2015.5.22)  7 SEP 2015 16:27
+This is XeTeX, Version 3.1415926-2.5-0.9999.3 (TeX Live 2013/Debian) (format=xelatex 2015.5.22)  8 SEP 2015 14:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -615,13 +615,13 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 [3]
 
-LaTeX Warning: Command \r invalid in math mode on input line 110.
+LaTeX Warning: Command \r invalid in math mode on input line 112.
 
 File: pics/picture2.png Graphic file (type QTm)
 <use  "pics/picture2.png" > [4]
 File: pics/picture3.png Graphic file (type QTm)
  <use  "pics/picture3.png" >
-Overfull \hbox (19.91965pt too wide) in paragraph at lines 138--139
+Overfull \hbox (19.91965pt too wide) in paragraph at lines 142--143
  [] 
  []
 
@@ -631,21 +631,32 @@ File: pics/dynamical.eps Graphic file (type eps)
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[7]
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[8]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 373.
+[7] [8]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 376.
 
  (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 373.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 376.
  [9]
-Overfull \hbox (1.42995pt too wide) in paragraph at lines 463--464
+Overfull \hbox (1.42995pt too wide) in paragraph at lines 466--467
  [] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 467--467
+[][][]|\OT1/cmr/m/n/12 Ge-o-met-ri-cal
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 467--467
+\OT1/cmr/m/n/12 char-ac-ter-i-za-tion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 467--467
+\OT1/cmr/m/n/12 of the Bragg
  []
 
 [10] [11]
@@ -660,58 +671,56 @@ File: pics/test11.eps Graphic file (type eps)
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
+[12]
 File: pics/test12.eps Graphic file (type eps)
-<pics/test12.eps>
+ <pics/test12.eps>
 File: pics/test14.eps Graphic file (type eps)
  <pics/test14.eps>
-Underfull \hbox (badness 2229) in paragraph at lines 559--559
+Underfull \hbox (badness 2229) in paragraph at lines 566--566
 [][]|\OT1/cmr/m/n/8 BaTiO$[]$ (tetrag-o-nal unit cell): asym-met-ric, non-
  []
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
 
 File: pics/GaAs.eps Graphic file (type eps)
 <pics/GaAs.eps>
 File: pics/GaAs.png Graphic file (type QTm)
  <use  "pics/GaAs.png" >
-Overfull \hbox (44.81241pt too wide) in paragraph at lines 575--576
+Overfull \hbox (44.81241pt too wide) in paragraph at lines 582--583
 [][] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[12]
+[13]
 File: pics/SrTiO3_2.eps Graphic file (type eps)
  <pics/SrTiO3_2.eps>
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 602--604
+Underfull \hbox (badness 10000) in paragraph at lines 609--611
 
  []
 
-[13] [14] [15] (./report.bbl)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 644.
+[14] [15] (./report.bbl)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 651.
  [16
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 644.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 651.
  (./report.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 644.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 644.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 651.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 651.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 644.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 651.
  ) 
 Here is how much of TeX's memory you used:
  15795 strings out of 495658
  233270 string characters out of 6187951
- 408402 words of memory out of 5000000
+ 407402 words of memory out of 5000000
  18824 multiletter control sequences out of 15000+600000
  13731 words of font info for 49 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
