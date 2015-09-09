@@ -15,7 +15,7 @@
   belowskip=3mm,
   showstringspaces=false,
   columns=flexible,
-  basicstyle={\small\ttfamily},
+  basicstyle={\footnotesize\ttfamily},
   numbers=none,
   numberstyle=\tiny\color{gray},
   keywordstyle=\color{blue},
@@ -76,6 +76,7 @@ The discovery of X-ray diffraction in crystals by Laue, Fridrich and Knipping in
 \\
 
 Inspired by the result of Fridrich's and Knipping's experiment, Laue devised the simplest theory of three-dimensional diffraction and interference. It was referred to as geometrical or kinematical theory. A characteristics feature of kinematical theory is that it takes into account only the interactions of each atom with the primary, or refracted, wave in a crystal. It neglects the interaction of an atom with the wave field induced in the crystal by the collettive scattering of all the other atoms. In other words it ignores the interaction of the diffracted waves with the refracted one. The kinematical theory is a good first approximation, when applied to highly imperfect crystals consisting of very small mosaic blocks. For the highly perfect type of crystal however, it is necessary to use the more rigorous dynamical theory, and grossly incorrect results would be obtained by using the kinematical approximation.
+In this work, the reflection of X-rays at the surface of perfect crystals and multilayers was therefore described using the dynamical theory of diffraction.
 
 
 \section{Dynamical theory of diffraction}
@@ -109,7 +110,7 @@ We introduced the abbreviation
  g_\mathbf{H}=r_e\frac{\lambda F_\mathbf{H}d}{V \sin{\theta_B}}
 \end{equation}
 
-where $r_e=\frac{e^2}{mc^2}=2.818 \cdot 10^{-5} \AA{}$ is the classical electron radius, $F_\mathbf{H}$ is the structure factor for the reciprocal lattice vector $\mathbf{H}$, $d$ is the spacing of the reflecting planes, $V$ is the volume of the unit cell and $\theta_B$ is the Bragg angle.
+where $r_e=\frac{e^2}{mc^2}=2.818 \cdot 10^{-5}$ \AA{} is the classical electron radius, $F_\mathbf{H}$ is the structure factor for the reciprocal lattice vector $\mathbf{H}$, $d$ is the spacing of the reflecting planes, $V$ is the volume of the unit cell and $\theta_B$ is the Bragg angle.
 
 \begin{figure}[h]
 \begin{center}
@@ -364,7 +365,7 @@ After substitution, we obtain the reflected and transmitted amplitude ratios for
 
 \section{Implementation}
 
-In order to simulate the rocking curves of strained crystals, multilayers and superlattices in the dynamical theory, a Python program has been developed. The program \textit{dynXRD} is applicable to any coplanar and non-coplanar Bragg-case geometry (see section \ref{geom}) and to crystals with any number of different layers. Layers with arbitrary strain profile are also implemented (see section \ref{strcr}). At the moment perpendicular ($\sigma$) polarization is the only one enabled, but parallel ($\pi$) and mixed polarizations may be included in the future. The program requires \textit{pyasf} () for the definition of the crystal structure and for the calculation of the structure factors.
+In order to simulate the rocking curves of strained crystals, multilayers and superlattices in the dynamical theory, a Python program has been developed. The program \textit{dynXRD} is applicable to any coplanar and non-coplanar Bragg-case geometry (see section \ref{geom}) and to crystals with any number of different layers. Layers with arbitrary strain profile are also implemented (see section \ref{strcr}). At the moment perpendicular ($\sigma$) polarization is the only one enabled, but parallel ($\pi$) and mixed polarizations may be included in the future. The program requires \textit{pyasf} (\url{https://github.com/carichte/pyasf}) for the definition of the crystal structure and for the calculation of the structure factors.
 
 %something about pyasf
 
@@ -517,7 +518,7 @@ The program \textit{dynXRD} was first tested by comparing the results with the p
 
 
 \subsection{Rocking curves of crystalline multilayers}\label{res1}
-Figures \ref{testsMgO} and \ref{testsLiNbO3} show the simulated rocking curves of crystalline layers (cubic MgO and trigonal LiNbO$ _3$) of thickness $100\;nm$ when an incident beam of energy $10\; keV$ is applied. 
+Figures \ref{testsMgO} and \ref{testsLiNbO3} show the simulated rocking curves of crystalline layers (cubic MgO and trigonal LiNbO$ _3$) of thickness $100$ nm when an incident beam of energy $10$ keV is applied. 
 
 \begin{figure}[h]
  \centering
@@ -531,7 +532,7 @@ Figures \ref{testsMgO} and \ref{testsLiNbO3} show the simulated rocking curves o
   \caption{Asymmetric case: $v_\parallel=(3, -2, -1)$, $v_\perp=(1,1,1)$.}
   \label{test7}
  \end{subfigure}
- \caption{$002$ reflection for a MgO layer of thickness $100\;nm$ in non-coplanar geometry.}\label{testsMgO}
+ \caption{$002$ reflection for a MgO layer of thickness $100$ nm in non-coplanar geometry.}\label{testsMgO}
 \end{figure}
 
 \begin{figure}[h]
@@ -546,14 +547,14 @@ Figures \ref{testsMgO} and \ref{testsLiNbO3} show the simulated rocking curves o
   \caption{Asymmetric, non-coplanar case: $v_\parallel=(-1, 1, 4)$,\newline$v_\perp=(1,1,0)$.}
   \label{test11}
  \end{subfigure}
- \caption{$300$ reflection for a LiNbO$ _3$ layer of thickness $100\;nm$.}\label{testsLiNbO3}
+ \caption{$300$ reflection for a LiNbO$ _3$ layer of thickness $100$ nm.}\label{testsLiNbO3}
 \end{figure}
 It can be noted that simulations made with \textit{GID\_sl} and \textit{dynXRD} give analogous results in all cases even though the methods used by the programs are different.
 
 \newpage
 \subsection{Diffraction profiles of strained crystals}\label{res2}
 
-Simulations of strained crystals are shown in figure \ref{testsstrain}. The main peak exhibits a Darwin plateau which is due to reflection from the substrate. On the other hand, smaller peaks reveal the presence of the strained layer. Both plots show a $002$ reflection with energy $10\; keV$. The substrate and the layer have the same structure and orientation. The layer is $100\; nm$ thick and has $1\%$ lattice strain.
+Simulations of strained crystals are shown in figure \ref{testsstrain}. The main peak exhibits a Darwin plateau which is due to reflection from the substrate. On the other hand, smaller peaks reveal the presence of the strained layer. Both plots show a $002$ reflection with energy $10$ keV. The substrate and the layer have the same structure and orientation. The layer is $100$ nm thick and has $1\%$ lattice strain.
 \begin{figure}[h]
  \centering
  \begin{subfigure}[h]{0.49\textwidth}
@@ -570,25 +571,88 @@ Simulations of strained crystals are shown in figure \ref{testsstrain}. The main
 \end{figure}
 
 
-Figure \ref{GaAs_both} shows the 004 Cu $K\alpha_1$ reflection of a structure consisting of four epitaxial GaAs layers of different thickness on a GaAs substrate \cite{Bartels:a25435}. 
+Figure \ref{GaAs_article} shows the 004 Cu $K\alpha_1$ reflection of a structure consisting of four epitaxial GaAs layers of different thickness on a GaAs substrate \cite{Bartels:a25435}. An example of how to use the program for this simulation is here reported. The output and the plot are shown in figure \ref{GaAs}.
+
+\newpage
+\begin{lstlisting}
+import pyasf
+import reflectivity
+import sympy as sp
+import pylab as pl
+import numpy as np
+
+# Substrate
+structsub = pyasf.unit_cell("9008845") #GaAs
+Sub=reflectivity.Substrate(structsub)
+
+# Strained layers
+struct1=pyasf.unit_cell("9008845") #GaAs
+tvector=np.array([0, 3, 4.5, 5.5, 6])*1e4
+strain=np.array([20, 15, 10, 5])*1e-4
+layer1=reflectivity.Strained_Layer(struct1, tvector, a=strain)
+
+# Geometry of substrate and layers
+psi=0
+v_perp=sp.Matrix([0,0,1])
+Sub.calc_orientation_from_angle(psi, v_perp)
+layer1.calc_orientation_from_angle(psi, v_perp)
+
+# Crystal sample    
+crystal=reflectivity.Sample(Sub, layer1)
+
+# Miller indices
+R = 0,0,4
+crystal.set_Miller(R)
+
+# Reflectivity
+Energy=8048
+crystal.calc_g0_gH(Energy)
+thBragg= Sub.thetaBragg
+angle=pl.linspace(0.9975, 1.0008,501)*thBragg
+XR=crystal.calc_reflectivity(angle, Energy)
+
+# Values and Plot
+crystal.print_values(angle, Energy)
+pl.plot((angle-thBragg), abs(XR)**2)
+\end{lstlisting}
+
+\newpage
 \begin{figure}[h]
  \centering
  \begin{subfigure}[h]{0.49\textwidth}
+  \begin{lstlisting}
+  Looking up Crystallography Open Database for entry 9008845...
+Cubic
+Looking up Crystallography Open Database for entry 9008845...
+Cubic
+wavelength (A):  1.54050695825  Energy (eV):  8048
+Bragg reflection: 
+Matrix([[0], [0], [4]])
+Surface:  Matrix([[0], [0], [1]])
+Bragg plane angle to surface (degrees):  0.0
+Bragg angle (degrees):  33.0216106979
+Incident angle (degrees):  33.0216106979
+Exit angle (degrees):  33.0216106979
+Asymmetry factor:  -1.00000000000000
+Symmetric
+Coplanar
+  \end{lstlisting}
   \includegraphics[width=\textwidth]{pics/GaAs.eps}
-  \caption{}
+  \caption{Simulation with \textit{dynXRD}.}
   \label{GaAs}
  \end{subfigure}
  \begin{subfigure}[h]{0.50\textwidth}
   \includegraphics[width=1.2\textwidth]{pics/GaAs.png}
-  \caption{}
+  \caption{The substrate surface is taken as the origin of the thickness scale in the depth profile. The plot from Bartels et al. \cite{Bartels:a25435} compares diffraction profiles calculated with the dynamical and kinematical theory.}
   \label{GaAs_article}
  \end{subfigure}
- \caption{The substrate surface is taken as the origin of the thickness scale in the depth profile. The plot in figure \ref{GaAs_article} from Bartels et al. \cite{Bartels:a25435} compares diffraction profiles calculated with the dynamical and kinematical theory, while figure \ref{GaAs} shows a simulation made with \textit{dynXRD}.
+  \caption{The results of simulation with \textit{dynXRD} \ref{GaAs} are in good agreement with the plot \ref{GaAs_article} from literature.
 }\label{GaAs_both}
 \end{figure}
 
+
 \subsection{Comparison with experimental data}\label{data}
-The program was used to investigate the strain profile of a sample of SrTiO$ _3$. An external electric field was applied on the crystal, inducing a transition from a cubic symmetry to a tetragonal symmetry. Therefore, a model was developed assuming the following function for the strain of the $c$ parameter
+The program was used to investigate the strain profile of a sample of SrTiO$ _3$. An external electric field was applied on the crystal, inducing a transition from a cubic symmetry to a tetragonal symmetry\cite{PhysRevB.88.024104}. Therefore, a model was developed assuming the following function for the strain of the $c$ parameter
 \begin{equation}
  \frac{\Delta c}{c}=A e^{-x}(1+x)
 \end{equation}
@@ -606,7 +670,7 @@ The model parameters $A$ and $t_s$ where then fitted against the measured data. 
 \end{center}
 \end{figure}
 
-The estimated values are approximately $1 \%$ for the maximum strain and $0.6 \mu m$ for the strain thickness.\\
+The estimated values are approximately $1 \%$ for the maximum strain and $0.6\;\mu$m for the strain thickness.\\
 %$A=(1.034 \pm 0.004) \%$ and $t_s=(5.93 \pm 0.06) \mu m$
 
 % The same model was applied for fitting with different energies of the incident beam.
@@ -637,6 +701,11 @@ The estimated values are approximately $1 \%$ for the maximum strain and $0.6 \m
 %  \caption{}\label{en}
 % \end{figure}
 
+
+
+\section{Conclusion}
+The program \textit{dynXRD} was proved to correctly calculate rocking curves for complicated layered structures consisting of perfect and distorted crystals, in any coplanar and non-coplanar Bragg-case geometry. Applications in data analysis of material science experiments range from determination of strain (as in section \ref{data}) to measurements of standing waves.
+
 \clearpage 
 
 
@@ -644,7 +713,7 @@ The estimated values are approximately $1 \%$ for the maximum strain and $0.6 \m
 \nocite{*}
 \bibliographystyle{unsrt} 
 \addcontentsline{toc}{section}{References}
-\bibliography{Elements_of_Modern_X_ray_Physics,X_ray_Diffraction,bartels,Dynamical_Scattering_of_X_rays_in_Crysta}{}
+\bibliography{Elements_of_Modern_X_ray_Physics,X_ray_Diffraction,bartels,Dynamical_Scattering_of_X_rays_in_Crysta,physrev}{}
 
 
 

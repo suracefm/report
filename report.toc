@@ -13,5 +13,6 @@
 \contentsline {section}{\numberline {4}Results}{12}{section.4}
 \contentsline {subsection}{\numberline {4.1}Rocking curves of crystalline multilayers}{12}{subsection.4.1}
 \contentsline {subsection}{\numberline {4.2}Diffraction profiles of strained crystals}{13}{subsection.4.2}
-\contentsline {subsection}{\numberline {4.3}Comparison with experimental data}{14}{subsection.4.3}
-\contentsline {section}{References}{16}{figure.caption.14}
+\contentsline {subsection}{\numberline {4.3}Comparison with experimental data}{15}{subsection.4.3}
+\contentsline {section}{\numberline {5}Conclusion}{16}{section.5}
+\contentsline {section}{References}{17}{section.5}
